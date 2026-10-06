@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI 订阅费用计算器：比较月付、年付和实际使用成本｜刘能AI</title>
+<meta name="description" content="免费比较两个 AI 订阅方案的月均费用、全年费用和每个使用日的成本。免登录，浏览器本地计算，可复制结果分享；不调用 AI。">
+<link rel="canonical" href="https://liunenglabs.xyz/guides/subscription-cost/">
+<meta property="og:type" content="website"><meta property="og:title" content="每月买了 AI，你真正用了几天？">
+<meta property="og:description" content="免费算一算月付、年付和每个使用日的成本。两份方案放在一起看，结果可复制分享。">
+<meta property="og:url" content="https://liunenglabs.xyz/guides/subscription-cost/">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"AI 订阅费用计算器","alternateName":"LiuNengAI Subscription Cost Calculator","url":"https://liunenglabs.xyz/guides/subscription-cost/","description":"比较用户填写的两个订阅方案的月均、全年和每个使用日成本；浏览器本地计算，不调用模型。","applicationCategory":"UtilitiesApplication","operatingSystem":"Web browser","inLanguage":"zh-CN","isAccessibleForFree":true,"creator":{"@type":"Organization","name":"刘能AI · LiuNengAI"}}</script>
+<style>
+:root{color-scheme:light;--ink:#25212c;--muted:#706878;--purple:#65468a;--line:#e4ddec;--paper:#faf9fc}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.7 system-ui,-apple-system,sans-serif}nav,main,footer{max-width:920px;margin:auto;padding:24px}nav{display:flex;gap:22px;flex-wrap:wrap;border-bottom:1px solid var(--line)}a{color:var(--purple);text-underline-offset:4px}h1{font-size:clamp(30px,5vw,46px);line-height:1.28;max-width:740px;margin:28px 0 16px}h2{font-size:24px;line-height:1.35;margin:0 0 18px}p{overflow-wrap:anywhere}.eyebrow{font-size:14px;color:var(--purple);font-weight:650}.intro{max-width:700px}.muted{color:var(--muted);font-size:14px}.box{background:white;border:1px solid var(--line);border-radius:18px;padding:24px;margin:24px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.plan{border:1px solid var(--line);border-radius:14px;padding:20px}.field{display:block;margin:16px 0}.field span{display:block;margin-bottom:6px;font-size:15px;font-weight:600}input,select,textarea{width:100%;font:inherit;border:1px solid #cdbfd9;border-radius:9px;padding:10px;background:white;color:var(--ink)}input{min-width:0}textarea{font-size:14px;line-height:1.6;resize:vertical}button{font:inherit;border:1px solid #cab9da;border-radius:10px;padding:10px 16px;background:#f4eef9;color:var(--purple);cursor:pointer}.primary{background:var(--purple);border-color:var(--purple);color:white}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}button:disabled{opacity:.45;cursor:default}:focus-visible{outline:3px solid #9872c1;outline-offset:3px}.error{color:#a12742;min-height:1.7em;font-size:15px}.use-days{max-width:310px}.results .plan{background:#faf7fd}.big{font-size:clamp(26px,4vw,36px);line-height:1.3;font-weight:700;letter-spacing:-.5px;margin:8px 0}.detail{display:grid;grid-template-columns:1fr auto;gap:8px 14px;margin:18px 0 0;font-size:15px}.detail dt{color:var(--muted)}.detail dd{margin:0;font-weight:600;text-align:right}.difference{border-left:3px solid #a682cc;padding-left:16px;margin:22px 0 0}.tag{display:inline-block;background:#f2eaf8;color:var(--purple);border-radius:20px;padding:3px 10px;font-size:13px}.facts li{margin:10px 0}.source{font-size:14px;border-top:1px solid var(--line);padding-top:16px}footer{border-top:1px solid var(--line);font-size:14px}footer p{margin:10px 0}.safety{background:#fffef8}noscript{display:block;margin:20px 0;color:#a12742}@media(max-width:640px){nav,main,footer{padding:18px}.grid{grid-template-columns:1fr}.box{padding:18px}.plan{padding:18px}h1{margin-top:18px}.big{font-size:32px}}
+</style>
+</head>
+<body>
+<nav><a href="/">刘能AI · LiuNengAI</a><a href="/guides/">免费工具与指南</a><a href="/guides/choose-plus-pro/">本站套餐与条件</a></nav>
+<main>
+<p class="eyebrow">免费 · 免登录 · 本地计算</p>
+<h1>每月买了 AI，<br>你真正用了几天？</h1>
+<p class="intro">先把两个订阅方案放在一起算一算：月均付多少、用一年要多少，以及每个实际使用日摊到多少钱。数字能比较成本，不能代替你判断功能是否合适。</p>
+<noscript>请启用 JavaScript 使用计算器。你仍可阅读下方计算方法和购买检查清单。</noscript>
+<form id="cost-form" class="box" novalidate>
+<h2>填两份方案</h2>
+<p class="muted">金额统一按人民币填写；名称只作备注。默认金额是演示数据，可改成任意 AI 工具的报价。</p>
+<div class="grid">
+<section class="plan" aria-labelledby="input-a-title"><h2 id="input-a-title">方案 A</h2>
+<label class="field"><span>方案 A 名称</span><input id="name-a" maxlength="50" value="方案 A"></label>
+<label class="field"><span>方案 A 每次付款金额（元）</span><input id="amount-a" type="number" min="0" max="1000000" step="0.01" inputmode="decimal" value="123" required></label>
+<label class="field"><span>方案 A 付款周期</span><select id="cycle-a"><option value="monthly">每月付款</option><option value="yearly">每年付款</option></select></label>
+</section>
+<section class="plan" aria-labelledby="input-b-title"><h2 id="input-b-title">方案 B</h2>
+<label class="field"><span>方案 B 名称</span><input id="name-b" maxlength="50" value="方案 B"></label>
+<label class="field"><span>方案 B 每次付款金额（元）</span><input id="amount-b" type="number" min="0" max="1000000" step="0.01" inputmode="decimal" value="698" required></label>
+<label class="field"><span>方案 B 付款周期</span><select id="cycle-b"><option value="monthly">每月付款</option><option value="yearly">每年付款</option></select></label>
+</section>
+</div>
+<label class="field use-days"><span>预计每月实际使用几天？</span><input id="use-days" type="number" min="1" max="31" step="1" inputmode="numeric" value="20" required></label>
+<p class="muted">“使用日”指当天至少实际使用过一次。两份方案使用同一个天数，方便比较；这不是按天计费的报价。</p>
+<div class="actions"><button class="primary" type="submit">计算并比较</button><button id="reset" type="button">恢复演示</button></div>
+<p id="error" class="error" role="alert"></p>
+</form>
+<section id="results" class="box results" aria-labelledby="result-title" aria-live="polite">
+<h2 id="result-title">按你填写的条件计算</h2>
+<div class="grid">
+<section class="plan"><span class="tag" id="result-name-a">方案 A</span><p class="muted">每个实际使用日的成本</p><p class="big" id="daily-a">¥6.15</p><dl class="detail"><dt>折合每月</dt><dd id="monthly-a">¥123.00</dd><dt>连续使用 12 个月</dt><dd id="annual-a">¥1,476.00</dd></dl></section>
+<section class="plan"><span class="tag" id="result-name-b">方案 B</span><p class="muted">每个实际使用日的成本</p><p class="big" id="daily-b">¥34.90</p><dl class="detail"><dt>折合每月</dt><dd id="monthly-b">¥698.00</dd><dt>连续使用 12 个月</dt><dd id="annual-b">¥8,376.00</dd></dl></section>
+</div>
+<p id="difference" class="difference">方案 B 每月多 ¥575.00；连续使用 12 个月多 ¥6,900.00。</p>
+<p class="muted">按价格不变、连续订阅 12 个月估算。年付金额除以 12 得到月均费用；未加入税费、汇率、优惠、退款或额度变化。结果不代表实际计费规则，也不代表两份方案功能相同。</p>
+<label class="field"><span>可复制的比较结果</span><textarea id="share-text" rows="6" readonly></textarea></label>
+<div class="actions"><button id="copy-result" type="button">复制结果与工具链接</button><button id="copy-link" type="button">只复制工具链接</button><button id="download" type="button">下载结果文本</button></div>
+<p id="copy-status" class="muted" role="status" aria-live="polite"></p>
+<p class="source">你可以把这份比较发给一起选工具的朋友。分享链接不携带输入的金额或名称；只有你选择复制或下载时，结果才会导出。</p>
+</section>
+<section class="box safety"><h2>算完，再核对三件事</h2><ul class="facts"><li>便宜的方案是否包含你需要的功能，是否有你能接受的使用限制？</li><li>买的是本人账号订阅、共享账号还是 API 服务？它们不能只按价格当成同一件商品。</li><li>现有订阅能否续费或升级、如何交付、失败后找谁处理？付款前看当前条件。</li></ul><p><a href="/guides/buying-checklist/">查看购买前检查清单 →</a></p></section>
+<section class="box"><h2>想看刘能AI的方案？</h2><p>本站提供付费的本人账号 ChatGPT 订阅充值服务。价格、适用账号与交付方式以当前商品页为准；已有订阅先确认资格。</p><p><a href="/guides/choose-plus-pro/">比较本站 Plus、Pro 5X / 10X / 25X 与续费条件 →</a></p><p><a href="/item/1">查看 Plus 商品 →</a></p><p class="muted">上面的计算器可以比较任何人民币计价的订阅，不要求购买本站商品。</p></section>
+<section class="box"><h2>计算方法与隐私</h2><p>月付：月均费用 = 每次付款金额；全年费用 = 月均费用 × 12。年付：月均费用 = 每次付款金额 ÷ 12；全年费用 = 每次付款金额。每个使用日成本 = 月均费用 ÷ 每月使用天数。</p><p>免登录，不调用 AI。输入只在当前浏览器里计算，不上传、不写入本地存储；本页不加载统计或第三方脚本。点击站内导航后会进入其他页面，那些页面有自己的汇总统计说明。</p><p><a href="/guides/subscription-cost/source.html" download="liunengai-subscription-cost.html">下载单文件源码，离线使用 →</a></p><p class="muted">代码使用 MIT 许可。更新：2026-10-01。</p><p class="muted" lang="en">Free AI subscription cost calculator. Compare two monthly or annual plans, annual totals and cost per active day. Local browser calculations, no signup, no AI calls. Amounts are entered in CNY.</p></section>
+</main>
+<footer><p>刘能AI · LiuNengAI｜业务 QQ：<span style="user-select:all">941249849</span></p><p>独立服务商，非 OpenAI 官方网站。免费计算器不要求购买；商品条件与售后范围以商品页为准。</p><p>工具目录：<a href="https://twelve.tools/" rel="nofollow sponsored noopener" target="_blank">Twelve Tools</a></p></footer>
+<script>
+/* MIT License
+Copyright (c) 2026 LiuNeng AI
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const toolLink = 'https://liunenglabs.xyz/guides/subscription-cost/';
+  const money = n => '¥' + n.toLocaleString('zh-CN', {minimumFractionDigits:2,maximumFractionDigits:2});
+  function cost(amount, cycle, days) {
+    if (!Number.isFinite(amount) || amount < 0 || amount > 1000000) throw new Error('付款金额请填写 0～1,000,000 之间的数字。');
+    if (!['monthly','yearly'].includes(cycle)) throw new Error('请选择月付或年付。');
+    if (!Number.isInteger(days) || days < 1 || days > 31) throw new Error('每月使用天数请填写 1～31 之间的整数。');
+    const annual = cycle === 'yearly' ? amount : amount * 12;
+    const monthly = cycle === 'yearly' ? amount / 12 : amount;
+    return {monthly, annual, daily:monthly / days};
+  }
+  function update() {
+    try {
+      if (!$('amount-a').value.trim() || !$('amount-b').value.trim() || !$('use-days').value.trim()) throw new Error('请先填写两份方案的金额和每月使用天数。');
+      const days=Number($('use-days').value), a=cost(Number($('amount-a').value),$('cycle-a').value,days), b=cost(Number($('amount-b').value),$('cycle-b').value,days);
+      const names=[$('name-a').value.trim()||'方案 A',$('name-b').value.trim()||'方案 B'];
+      for (const [key,v,name] of [['a',a,names[0]],['b',b,names[1]]]) {
+        $('result-name-'+key).textContent=name;
+        for(const metric of ['monthly','annual','daily']) $(metric+'-'+key).textContent=money(v[metric]);
+      }
+      const delta=b.monthly-a.monthly, annualDelta=b.annual-a.annual;
+      const diff=Math.abs(delta)<1e-9?'两份方案的折合月均费用相同。':`${names[1]}每月${delta>0?'多':'少'} ${money(Math.abs(delta))}；连续使用 12 个月${annualDelta>0?'多':'少'} ${money(Math.abs(annualDelta))}。`;
+      $('difference').textContent=diff;
+      $('share-text').value=`AI 订阅费用比较（人民币）\n每月实际使用 ${days} 天\n${names[0]}：月均 ${money(a.monthly)}，全年 ${money(a.annual)}，每个使用日 ${money(a.daily)}\n${names[1]}：月均 ${money(b.monthly)}，全年 ${money(b.annual)}，每个使用日 ${money(b.daily)}\n${diff}\n按填写条件、价格不变估算，不代表功能相同或实际按天计费。\n免费工具：${toolLink}`;
+      $('error').textContent=''; $('results').hidden=false;
+      $('copy-result').disabled=false; $('download').disabled=false;
+      return true;
+    } catch(error) {
+      $('error').textContent=error.message;
+      $('results').hidden=true; $('copy-result').disabled=true; $('download').disabled=true;
+      return false;
+    }
+  }
+  $('cost-form').addEventListener('submit',event=>{event.preventDefault();update();});
+  $('cost-form').addEventListener('input',()=>{$('copy-status').textContent='';update();});
+  $('cost-form').addEventListener('change',()=>{$('copy-status').textContent='';update();});
+  $('reset').addEventListener('click',()=>{$('cost-form').reset();$('copy-status').textContent='';update();});
+  async function copy(text, label) {
+    try {await navigator.clipboard.writeText(text);$('copy-status').textContent=label+'已复制。';}
+    catch (_) {$('copy-status').textContent='浏览器未允许自动复制，请手动选择下方结果或工具链接。';$('share-text').focus();$('share-text').select();}
+  }
+  $('copy-result').addEventListener('click',()=>{if(update())copy($('share-text').value,'比较结果与链接');});
+  $('copy-link').addEventListener('click',()=>copy(toolLink,'工具链接'));
+  $('download').addEventListener('click',()=>{
+    if(!update()) return;
+    const url=URL.createObjectURL(new Blob([$('share-text').value],{type:'text/plain;charset=utf-8'}));
+    const a=document.createElement('a');a.href=url;a.download='AI订阅费用比较.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+    $('copy-status').textContent='已生成结果文本。';
+  });
+  update();
+})();
+</script>
+</body></html>
