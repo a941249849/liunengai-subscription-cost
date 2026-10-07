@@ -6,7 +6,7 @@
 
 ## 下载使用
 
-[下载 v1.0.0 离线 HTML](https://github.com/a941249849/liunengai-subscription-cost/releases/download/v1.0.0/liunengai-subscription-cost.html) · [版本说明与 SHA-256 校验](https://github.com/a941249849/liunengai-subscription-cost/releases/tag/v1.0.0)
+[下载中文版 v1.0.1 离线 HTML](https://github.com/a941249849/liunengai-subscription-cost/releases/download/v1.0.1/liunengai-subscription-cost.html) · [Download English v1.0.1](https://github.com/a941249849/liunengai-subscription-cost/releases/download/v1.0.1/liunengai-subscription-cost.en.html) · [版本说明与 SHA-256 校验](https://github.com/a941249849/liunengai-subscription-cost/releases/tag/v1.0.1)
 
 打开仓库中的 `index.html`，点击 GitHub 的 **Download raw file** 下载，保存后用浏览器打开。也可以下载整个仓库的 ZIP 后打开该文件。无需安装、账号、API 密钥或 AI 订阅。工具界面为中文；导航链接需要联网，离线文件中的站内相对导航请改用上面的在线链接。
 
@@ -35,7 +35,7 @@
 
 A free Chinese-language calculator for comparing two CNY-denominated subscription plans: monthly equivalent, annual total and cost per active day. Choose monthly or annual billing and enter the number of active days per month.
 
-[Download the offline HTML release](https://github.com/a941249849/liunengai-subscription-cost/releases/tag/v1.0.0) or [try the live calculator](https://liunenglabs.xyz/guides/subscription-cost/). You can also download `index.html` using GitHub's **Download raw file**, then open it locally. The application is a single self-contained HTML file with no dependencies, signup, AI calls, input uploads or local-storage persistence. Navigation links need an internet connection; relative navigation in the offline file is best replaced by the live link above.
+[Download the offline HTML release](https://github.com/a941249849/liunengai-subscription-cost/releases/tag/v1.0.1) or [try the live calculator](https://liunenglabs.xyz/guides/subscription-cost/). You can also download `index.html` using GitHub's **Download raw file**, then open it locally. The application is a single self-contained HTML file with no dependencies, signup, AI calls, input uploads or local-storage persistence. Navigation links need an internet connection; relative navigation in the offline file is best replaced by the live link above.
 
 Example: CNY 99/month versus CNY 1,200/year at 20 active days per month gives monthly equivalents of 99 and 100, annual totals of 1,188 and 1,200, and daily equivalents of 4.95 and 5.00. These are entered assumptions, not current offers, real per-day billing or a claim that the plans have equal features.
 
