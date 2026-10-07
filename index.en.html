@@ -1,0 +1,98 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Subscription Cost Calculator: Monthly vs Annual CNY Plans | LiuNengAI</title><meta name="description" content="Compare monthly and annual subscription quotes in CNY, annual totals and cost per active day. Free, no signup, local calculations and offline download."><link rel="canonical" href="https://liunenglabs.xyz/guides/subscription-cost/en/"><link rel="alternate" hreflang="en" href="https://liunenglabs.xyz/guides/subscription-cost/en/"><link rel="alternate" hreflang="zh-CN" href="https://liunenglabs.xyz/guides/subscription-cost/"><meta property="og:type" content="website"><meta property="og:title" content="What does your subscription cost on days you use it?"><meta property="og:description" content="Compare CNY monthly and annual quotes. Free local calculator, no signup."><meta property="og:url" content="https://liunenglabs.xyz/guides/subscription-cost/en/"><meta name="twitter:card" content="summary"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "LiuNengAI Subscription Cost Calculator", "url": "https://liunenglabs.xyz/guides/subscription-cost/en/", "description": "Compare monthly and annual CNY quotes and cost per active day. Free local browser calculations; no AI calls.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web browser", "inLanguage": "en", "isAccessibleForFree": true, "creator": {"@type": "Organization", "name": "LiuNengAI"}}</script><style>
+:root{color-scheme:light;--ink:#25212c;--muted:#706878;--purple:#65468a;--line:#e4ddec;--paper:#faf9fc}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.7 system-ui,-apple-system,sans-serif}nav,main,footer{max-width:920px;margin:auto;padding:24px}nav{display:flex;gap:22px;flex-wrap:wrap;border-bottom:1px solid var(--line)}a{color:var(--purple);text-underline-offset:4px}h1{font-size:clamp(30px,5vw,46px);line-height:1.28;max-width:740px;margin:28px 0 16px}h2{font-size:24px;line-height:1.35;margin:0 0 18px}p{overflow-wrap:anywhere}.eyebrow{font-size:14px;color:var(--purple);font-weight:650}.intro{max-width:700px}.muted{color:var(--muted);font-size:14px}.box{background:white;border:1px solid var(--line);border-radius:18px;padding:24px;margin:24px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.plan{border:1px solid var(--line);border-radius:14px;padding:20px}.field{display:block;margin:16px 0}.field span{display:block;margin-bottom:6px;font-size:15px;font-weight:600}input,select,textarea{width:100%;font:inherit;border:1px solid #cdbfd9;border-radius:9px;padding:10px;background:white;color:var(--ink)}input{min-width:0}textarea{font-size:14px;line-height:1.6;resize:vertical}button{font:inherit;border:1px solid #cab9da;border-radius:10px;padding:10px 16px;background:#f4eef9;color:var(--purple);cursor:pointer}.primary{background:var(--purple);border-color:var(--purple);color:white}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}button:disabled{opacity:.45;cursor:default}:focus-visible{outline:3px solid #9872c1;outline-offset:3px}.error{color:#a12742;min-height:1.7em;font-size:15px}.use-days{max-width:310px}.results .plan{background:#faf7fd}.big{font-size:clamp(26px,4vw,36px);line-height:1.3;font-weight:700;letter-spacing:-.5px;margin:8px 0}.detail{display:grid;grid-template-columns:1fr auto;gap:8px 14px;margin:18px 0 0;font-size:15px}.detail dt{color:var(--muted)}.detail dd{margin:0;font-weight:600;text-align:right}.difference{border-left:3px solid #a682cc;padding-left:16px;margin:22px 0 0}.tag{display:inline-block;background:#f2eaf8;color:var(--purple);border-radius:20px;padding:3px 10px;font-size:13px}.facts li{margin:10px 0}.source{font-size:14px;border-top:1px solid var(--line);padding-top:16px}footer{border-top:1px solid var(--line);font-size:14px}footer p{margin:10px 0}.safety{background:#fffef8}noscript{display:block;margin:20px 0;color:#a12742}@media(max-width:640px){nav,main,footer{padding:18px}.grid{grid-template-columns:1fr}.box{padding:18px}.plan{padding:18px}h1{margin-top:18px}.big{font-size:32px}}
+</style></head><body>
+<nav><a href="https://liunenglabs.xyz/">LiuNengAI</a><a href="https://liunenglabs.xyz/guides/subscription-cost/" lang="zh-CN">中文</a><a href="https://liunenglabs.xyz/guides/">Free tools &amp; guides (Chinese)</a></nav>
+<main>
+<p class="eyebrow">FREE · NO SIGNUP · LOCAL CALCULATIONS</p>
+<h1>What does your subscription<br>cost on days you use it?</h1>
+<p class="intro">Compare two monthly or annual quotes in Chinese yuan (CNY). See monthly equivalents, annual totals and cost per active day before choosing a plan. Cost alone does not tell you whether two plans offer the same features.</p>
+<noscript>Enable JavaScript to use the calculator. The formulas and buying checklist below remain readable.</noscript>
+<form id="cost-form" class="box" novalidate>
+<h2>Enter two plans</h2><p class="muted">Use CNY for both quotes. The default amounts are fictional examples, not current offers. No currency conversion is performed.</p>
+<div class="grid">
+<section class="plan" aria-labelledby="input-a-title"><h2 id="input-a-title">Plan A</h2>
+<label class="field"><span>Plan A name</span><input id="name-a" maxlength="50" value="Plan A"></label>
+<label class="field"><span>Plan A payment amount (CNY)</span><input id="amount-a" type="number" min="0" max="1000000" step="0.01" inputmode="decimal" value="99" required></label>
+<label class="field"><span>Plan A billing cycle</span><select id="cycle-a"><option value="monthly">Monthly payment</option><option value="yearly">Annual payment</option></select></label></section>
+<section class="plan" aria-labelledby="input-b-title"><h2 id="input-b-title">Plan B</h2>
+<label class="field"><span>Plan B name</span><input id="name-b" maxlength="50" value="Plan B"></label>
+<label class="field"><span>Plan B payment amount (CNY)</span><input id="amount-b" type="number" min="0" max="1000000" step="0.01" inputmode="decimal" value="1200" required></label>
+<label class="field"><span>Plan B billing cycle</span><select id="cycle-b"><option value="monthly">Monthly payment</option><option value="yearly" selected>Annual payment</option></select></label></section></div>
+<label class="field use-days"><span>How many days do you use it each month?</span><input id="use-days" type="number" min="1" max="31" step="1" inputmode="numeric" value="20" required></label>
+<p class="muted">An active day means a day you actually use the tool at least once. Both plans use the same day count. This is a cost comparison, not per-day billing.</p>
+<div class="actions"><button class="primary" type="submit">Calculate &amp; compare</button><button id="reset" type="button">Reset example</button></div><p id="error" class="error" role="alert"></p></form>
+<section id="results" class="box results" aria-labelledby="result-title" aria-live="polite">
+<h2 id="result-title">Results for your assumptions</h2><div class="grid">
+<section class="plan"><span class="tag" id="result-name-a">Plan A</span><p class="muted">Cost per active day</p><p class="big" id="daily-a">¥4.95</p><dl class="detail"><dt>Monthly equivalent</dt><dd id="monthly-a">¥99.00</dd><dt>12 continuous months</dt><dd id="annual-a">¥1,188.00</dd></dl></section>
+<section class="plan"><span class="tag" id="result-name-b">Plan B</span><p class="muted">Cost per active day</p><p class="big" id="daily-b">¥5.00</p><dl class="detail"><dt>Monthly equivalent</dt><dd id="monthly-b">¥100.00</dd><dt>12 continuous months</dt><dd id="annual-b">¥1,200.00</dd></dl></section></div>
+<p id="difference" class="difference">Plan B costs ¥1.00 more per month and ¥12.00 more over 12 continuous months.</p>
+<p class="muted">Assumes unchanged prices and 12 continuous months. Annual payments are divided by 12 for comparison. Taxes, exchange rates, discounts, refunds and changes in usage limits are not included. This does not imply equal features or describe a provider's actual billing rules.</p>
+<label class="field"><span>Shareable comparison</span><textarea id="share-text" rows="6" readonly></textarea></label>
+<div class="actions"><button id="copy-result" type="button">Copy results &amp; link</button><button id="copy-link" type="button">Copy tool link</button><button id="download" type="button">Download results</button></div><p id="copy-status" class="muted" role="status" aria-live="polite"></p>
+<p class="source">Share a comparison with someone choosing a plan. The tool link never contains your entered names or amounts. Results are exported only when you choose to copy or download them.</p>
+<p><a href="https://liunenglabs.xyz/guides/subscription-cost/en/" download="liunengai-subscription-cost-en.html">Download this English calculator for offline use →</a></p></section>
+<section class="box safety"><h2>Before buying, check three things</h2><ul class="facts"><li>Does the cheaper plan include the features and limits you need?</li><li>Are you buying a subscription for your own account, a shared account, or API access? They are different products.</li><li>Can your existing subscription be renewed or upgraded? Check eligibility, delivery and support before paying.</li></ul><p><a href="https://liunenglabs.xyz/guides/chatgpt-subscription-vs-api/">ChatGPT subscriptions and API access explained (Chinese) →</a></p></section>
+<section class="box"><h2>How it works &amp; privacy</h2><p>Monthly billing: monthly equivalent = payment amount; annual total = amount × 12. Annual billing: monthly equivalent = amount ÷ 12; annual total = amount. Cost per active day = monthly equivalent ÷ active days per month.</p><p>No account, AI calls or live price feeds. Inputs are calculated in your current browser and are neither uploaded nor saved in local storage. This page contains no analytics or external scripts. Following links opens other pages with their own privacy and analytics practices.</p><p>The downloaded HTML works offline; navigation links require an internet connection. <a href="https://github.com/a941249849/liunengai-subscription-cost">Original Chinese source and MIT license →</a></p><p class="muted">English interface adapted with AI assistance from LiuNengAI's existing MIT calculator. Updated October 7, 2026.</p></section>
+<section class="box"><h2>About the operator</h2><p>LiuNengAI is an independent operator, not OpenAI. Our wider website separately offers paid ChatGPT subscription recharge on customers' own accounts. This calculator is free and requires no purchase. Eligibility, pricing, delivery and after-sales terms are stated on the current product pages in Chinese.</p><p><a href="https://liunenglabs.xyz/guides/choose-plus-pro/">Our subscription options and conditions (Chinese) →</a></p></section>
+</main><footer><p>LiuNengAI · Business QQ: <span style="user-select:all">941249849</span></p><p>Independent operator. Free calculator; no purchase required.</p></footer>
+<script>
+/* MIT License
+Copyright (c) 2026 LiuNeng AI
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const toolLink = 'https://liunenglabs.xyz/guides/subscription-cost/en/';
+  const money = n => '¥' + n.toLocaleString('en-US', {minimumFractionDigits:2,maximumFractionDigits:2});
+  function cost(amount, cycle, days) {
+    if (!Number.isFinite(amount) || amount < 0 || amount > 1000000) throw new Error('Enter a payment amount between 0 and 1,000,000.');
+    if (!['monthly','yearly'].includes(cycle)) throw new Error('Choose monthly or annual billing.');
+    if (!Number.isInteger(days) || days < 1 || days > 31) throw new Error('Enter a whole number of active days between 1 and 31.');
+    const annual = cycle === 'yearly' ? amount : amount * 12;
+    const monthly = cycle === 'yearly' ? amount / 12 : amount;
+    return {monthly, annual, daily:monthly / days};
+  }
+  function update() {
+    try {
+      if (!$('amount-a').value.trim() || !$('amount-b').value.trim() || !$('use-days').value.trim()) throw new Error('Enter both payment amounts and your active days per month.');
+      const days=Number($('use-days').value), a=cost(Number($('amount-a').value),$('cycle-a').value,days), b=cost(Number($('amount-b').value),$('cycle-b').value,days);
+      const names=[$('name-a').value.trim()||'Plan A',$('name-b').value.trim()||'Plan B'];
+      for (const [key,v,name] of [['a',a,names[0]],['b',b,names[1]]]) {
+        $('result-name-'+key).textContent=name;
+        for(const metric of ['monthly','annual','daily']) $(metric+'-'+key).textContent=money(v[metric]);
+      }
+      const delta=b.monthly-a.monthly, annualDelta=b.annual-a.annual;
+      const diff=Math.abs(delta)<1e-9?'Both plans have the same monthly equivalent.':`${names[1]} costs ${money(Math.abs(delta))} ${delta>0?'more':'less'} per month and ${money(Math.abs(annualDelta))} ${annualDelta>0?'more':'less'} over 12 continuous months.`;
+      $('difference').textContent=diff;
+      $('share-text').value=`Subscription cost comparison (CNY)\nActive days per month: ${days}\n${names[0]}: monthly ${money(a.monthly)}, annual ${money(a.annual)}, per active day ${money(a.daily)}\n${names[1]}: monthly ${money(b.monthly)}, annual ${money(b.annual)}, per active day ${money(b.daily)}\n${diff}\nBased on entered assumptions and unchanged prices; no claim of equal features or actual per-day billing.\nFree tool: ${toolLink}`;
+      $('error').textContent=''; $('results').hidden=false;
+      $('copy-result').disabled=false; $('download').disabled=false;
+      return true;
+    } catch(error) {
+      $('error').textContent=error.message;
+      $('results').hidden=true; $('copy-result').disabled=true; $('download').disabled=true;
+      return false;
+    }
+  }
+  $('cost-form').addEventListener('submit',event=>{event.preventDefault();update();});
+  $('cost-form').addEventListener('input',()=>{$('copy-status').textContent='';update();});
+  $('cost-form').addEventListener('change',()=>{$('copy-status').textContent='';update();});
+  $('reset').addEventListener('click',()=>{HTMLFormElement.prototype.reset.call($('cost-form'));$('copy-status').textContent='';update();});
+  async function copy(text, label) {
+    try {await navigator.clipboard.writeText(text);$('copy-status').textContent=label+' copied.';}
+    catch (_) {$('copy-status').textContent='Automatic copying was blocked. Select and copy the comparison or tool link manually.';$('share-text').focus();$('share-text').select();}
+  }
+  $('copy-result').addEventListener('click',()=>{if(update())copy($('share-text').value,'Results and link');});
+  $('copy-link').addEventListener('click',()=>copy(toolLink,'Tool link'));
+  $('download').addEventListener('click',()=>{
+    if(!update()) return;
+    const url=URL.createObjectURL(new Blob([$('share-text').value],{type:'text/plain;charset=utf-8'}));
+    const a=document.createElement('a');a.href=url;a.download='subscription-cost-comparison.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+    $('copy-status').textContent='Result text generated.';
+  });
+  update();
+})();
+</script></body></html>

@@ -2,7 +2,7 @@
 
 比较两份订阅的月均费用、全年费用和每个实际使用日的成本。免费、免登录，输入在当前浏览器计算；单个 HTML 文件可离线使用。
 
-[在线使用计算器](https://liunenglabs.xyz/guides/subscription-cost/) · [查看免费工具与指南](https://liunenglabs.xyz/guides/?utm_source=github)
+[在线使用计算器](https://liunenglabs.xyz/guides/subscription-cost/) · [English calculator](https://liunenglabs.xyz/guides/subscription-cost/en/) · [查看免费工具与指南](https://liunenglabs.xyz/guides/?utm_source=github)
 
 ## 下载使用
 
@@ -46,3 +46,9 @@ MIT © 2026 LiuNeng AI. See [LICENSE](LICENSE). This republishes the tool's exis
 由刘能AI / LiuNengAI 独立运营。网站另有付费的自有账号 ChatGPT 订阅充值服务；计算器免费，不要求购买。我们不是 OpenAI 官方网站。
 
 LiuNengAI is an independent operator, not OpenAI. The associated website has a separate paid service for ChatGPT subscription recharge on customers' own accounts; this free calculator requires no purchase.
+
+## English interface
+
+[Use the English calculator](https://liunenglabs.xyz/guides/subscription-cost/en/) or download [`index.en.html`](index.en.html) with GitHub’s **Download raw file** and open it in your browser. Both interfaces use CNY; no currency conversion is performed. The English interface was adapted with AI assistance from the existing MIT source, keeping the numeric formula and validation limits.
+
+The current source fixes the reset button in both interfaces. The older Chinese v1.0.0 release remains available unchanged and predates that fix; use the current HTML files for the corrected reset behavior.

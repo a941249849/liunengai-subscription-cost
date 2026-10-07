@@ -104,7 +104,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   $('cost-form').addEventListener('submit',event=>{event.preventDefault();update();});
   $('cost-form').addEventListener('input',()=>{$('copy-status').textContent='';update();});
   $('cost-form').addEventListener('change',()=>{$('copy-status').textContent='';update();});
-  $('reset').addEventListener('click',()=>{$('cost-form').reset();$('copy-status').textContent='';update();});
+  $('reset').addEventListener('click',()=>{HTMLFormElement.prototype.reset.call($('cost-form'));$('copy-status').textContent='';update();});
   async function copy(text, label) {
     try {await navigator.clipboard.writeText(text);$('copy-status').textContent=label+'已复制。';}
     catch (_) {$('copy-status').textContent='浏览器未允许自动复制，请手动选择下方结果或工具链接。';$('share-text').focus();$('share-text').select();}
