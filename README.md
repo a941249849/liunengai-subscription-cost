@@ -39,6 +39,16 @@ A free Chinese-language calculator for comparing two CNY-denominated subscriptio
 
 Example: CNY 99/month versus CNY 1,200/year at 20 active days per month gives monthly equivalents of 99 and 100, annual totals of 1,188 and 1,200, and daily equivalents of 4.95 and 5.00. These are entered assumptions, not current offers, real per-day billing or a claim that the plans have equal features.
 
+## 比费用之前，先确认买的是什么
+
+价格相近，不代表账号条件、使用权益和交付方式相同。计算器只算你输入的金额，不会替你判断套餐是否适用。
+
+- [ChatGPT Plus、Pro 100 / 200 / 500：价格、账号条件与交付](https://liunenglabs.xyz/guides/choose-plus-pro/?utm_source=github)：本站商品名称与卡面 5X / 10X / 25X 的对应关系，以及新购、升级、续费的区别。
+- [购买前检查账号条件](https://liunenglabs.xyz/guides/buying-checklist/?utm_source=github)：已有订阅先核验，不把普通新购卡当作升级卡。
+- [已经付款，卡密去哪兑换？](https://liunenglabs.xyz/guides/payment-order-support/?utm_source=github)：订单查询、领取卡密、订阅兑换与接码兑换的不同入口。
+
+以上为运营方整理的本站服务说明，涉及本站另行收费的订阅业务，非独立测评或 OpenAI 官方说明。无需购买即可使用本计算器；当前价格与办理条件以商品页和结算页为准。
+
 ## License and operator
 
 MIT © 2026 LiuNeng AI. See [LICENSE](LICENSE). This republishes the tool's existing public MIT source without changing its calculation logic. Documentation was prepared with AI assistance.
